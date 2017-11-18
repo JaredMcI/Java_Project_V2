@@ -2,17 +2,17 @@ public class Player extends Creature {
 
     private int Charisma;
     private int Dexterity;
-    private float height;
+    private double height;
 
 
 
     public void setCharisma(int charisma) { Charisma = charisma; }
-    public void setHeight(float height) { this.height = height; }
+    public void setHeight(double height) { this.height = height; }
     public void setDexterity(int dexterity) { Dexterity = dexterity; }
 
     public int getCharisma(){ return Charisma; }
     public int getDexterity(){return Dexterity;}
-    public float getHeight(){ return height;}
+    public double getHeight(){ return height;}
 
 //    public Player(int charisma, int dexterity, float height) {
 //        Charisma = charisma;
@@ -20,7 +20,7 @@ public class Player extends Creature {
 //        this.height = height;
 //    }
 
-    public Player(float Health, int Intelligence, float Armour, int Strength, String Vulnerability, Weapon Weapon, int charisma, int dexterity, float height) {
+    public Player(double Health, int Intelligence, double Armour, int Strength, String Vulnerability, Weapon Weapon, int charisma, int dexterity, double height) {
         super(Health, Intelligence, Armour, Strength, Vulnerability, Weapon);
         Charisma = charisma;
         Dexterity = dexterity;

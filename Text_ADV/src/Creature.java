@@ -1,27 +1,27 @@
 public class Creature {
 
-        private float Health;
+        private static double Health;
         private int Intelligence;
-        private float Armour;
-        private int Strength;
+        private static double Armour;
+        private static int Strength;
         private String Vulnerability;
-        private  Weapon Weapon;
+        private static Weapon Weapon;
 
         //Mutators
-    public void setHealth(float health) { Health = health; }
+    public static void setHealth(double health) { Health = health; }
     public void setIntelligence(int intelligence) { Intelligence = intelligence; }
-    public void setArmour(float armour) { Armour = armour; }
+    public static void setArmour(double armour) { Armour = armour; }
     public void setStrength(int strength) { Strength = strength; }
     public void setVulnerability(String vulnerability) { Vulnerability = vulnerability; }
-    public void setWeapon(Weapon weapon) { Weapon = weapon; }
+    public static void setWeapon(Weapon weapon) { Weapon = weapon; }
 
     //Accessor
-    public float getHealth() { return Health; }
+    public static double getHealth() { return Health; }
     public int getIntelligence() { return Intelligence; }
-    public float getArmour() { return Armour; }
-    public int getStrength() { return Strength; }
+    public static double getArmour() { return Armour; }
+    public static int getStrength() { return Strength; }
     public String getVulnerability() { return Vulnerability; }
-    public Weapon getWeapon() { return Weapon; }
+    public static Weapon getWeapon() { return Weapon; }
 
     //ToString
     public String toString() {
@@ -37,7 +37,7 @@ public class Creature {
         setVulnerability("Unknown");
         setWeapon(Weapon);
     }
-    public Creature(float Health,int Intelligence,float Armour,int Strength,String Vulnerability,Weapon Weapon){
+    public Creature(double Health,int Intelligence,double Armour,int Strength,String Vulnerability,Weapon Weapon){
         setHealth(Health);
         setIntelligence(Intelligence);
         setArmour(Armour);
@@ -45,6 +45,7 @@ public class Creature {
         setVulnerability(Vulnerability);
         setWeapon(Weapon);
 }
+
 
 
 }

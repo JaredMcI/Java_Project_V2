@@ -1,7 +1,7 @@
 public class Item {
     private String Name;
-    private String Type;
-    private double value;
+    private static String Type;
+    private static double value;
     private double weight;
 
 
@@ -13,8 +13,8 @@ public class Item {
 
     //Accessors
     public String getName() { return Name; }
-    public String getType() { return Type; }
-    public double getValue() { return value; }
+    public static String getType() { return Type; }
+    public static double getValue() { return value; }
     public double getWeight() { return weight; }
 
     public String toString() {
