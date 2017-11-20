@@ -30,8 +30,9 @@ public class Inventory extends Weapon {
             Creature.setArmour(Creature.getArmour() + Item.getValue());
         }
         else if (Item.getType().equals("Blade Oil")){
-            setWeaponDamage(Item.getValue());
+            setWeaponDamage(Creature.getWeapon().getDamage() + Item.getValue());
         }
+
 
     }
     public void EquipWeapon(Weapon Weapon){
