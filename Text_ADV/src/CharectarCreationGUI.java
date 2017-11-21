@@ -4,41 +4,48 @@ import java.awt.*;
 
 public class CharectarCreationGUI extends JFrame  {
 
-       public void start(){
+       public static void start(){
 
            JFrame CharectarWindow = new JFrame("Create Your Adventurer");
-           FlowLayout layout = new FlowLayout();
+           GridLayout layout = new GridLayout(0,2);
            CharectarWindow.setLayout(layout);
-           setSize(400,400);
-           setVisible(true);
+           CharectarWindow.setSize(350,150);
+           CharectarWindow.setVisible(true);
+           CharectarWindow.getContentPane().setBackground(Color.BLACK);
 
 
            JLabel Name =new JLabel();
            Name.setText("Name");
-           add(Name);
+           Name.setForeground(Color.WHITE);
+           CharectarWindow.add(Name);
            JTextField NameInput = new JTextField();
-           add(NameInput);
+           CharectarWindow.add(NameInput);
 
 
            JLabel Height =new JLabel();
-           Name.setText("Height:");
-           add(Height);
+           Height.setText("Height:");
+           Height.setForeground(Color.WHITE);
+           CharectarWindow.add(Height);
            JTextField HeightInput = new JTextField();
-           add(HeightInput);
+           CharectarWindow.add(HeightInput);
 
 
            JLabel StartWeapon =new JLabel();
-           Name.setText("Starting Weapon:");
-           add(StartWeapon);
+           StartWeapon.setText("Starting Weapon:");
+           StartWeapon.setForeground(Color.WHITE);
+           CharectarWindow.add(StartWeapon);
            JTextField StartWeaponInput = new JTextField();
-           add(StartWeaponInput);
+           CharectarWindow.add(StartWeaponInput);
 
 
            JLabel Vulnerability =new JLabel();
-           Name.setText("Vulnerability");
-           add(Vulnerability);
+           Vulnerability.setText("Vulnerability");
+           Vulnerability.setForeground(Color.WHITE);
+           CharectarWindow.add(Vulnerability);
            JTextField VulnerabilityInput = new JTextField();
-           add(VulnerabilityInput);
+           CharectarWindow.add(VulnerabilityInput);
+
+
 
        }}
 
