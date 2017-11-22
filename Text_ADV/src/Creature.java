@@ -1,10 +1,12 @@
+import javax.swing.*;
+
 public class Creature {
 
         private static double Health;
-        private int Intelligence;
+        private static int Intelligence;
         private static double Armour;
         private static int Strength;
-        private String Vulnerability;
+        private static String Vulnerability;
         private static Weapon Weapon;
 
         //Mutators
@@ -17,10 +19,10 @@ public class Creature {
 
     //Accessor
     public static double getHealth() { return Health; }
-    public int getIntelligence() { return Intelligence; }
+    public static int getIntelligence() { return Intelligence; }
     public static double getArmour() { return Armour; }
     public static int getStrength() { return Strength; }
-    public String getVulnerability() { return Vulnerability; }
+    public static String getVulnerability() { return Vulnerability; }
     public static Weapon getWeapon() { return Weapon; }
 
     //ToString
@@ -46,6 +48,24 @@ public class Creature {
         setWeapon(Weapon);
 }
 
+    public void Attack(Player User){
+        double AttackMultiplier = 0;
+        if (Creature.getWeapon().getDamage_Type() == User.getVulnerability()){
+            AttackMultiplier += 0.15;
+        }
+        if (Creature.getIntelligence() >  User.getIntelligence()){
+            AttackMultiplier += 0.1;
 
+        }
+        AttackMultiplier += Creature.getStrength()* 0.05;
+
+        User.setHealth((User.getHealth() + (User.getHealth()*User.getArmour())) - Creature.getWeapon().getDamage()*AttackMultiplier);
+        if(User.getHealth() < 0){
+            JOptionPane.showMessageDialog(null, "Your Opponent slayed you");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "You have" + User.getHealth() + " HP remaining.");
+
+    }
 
 }

@@ -1,30 +1,36 @@
+import jdk.nashorn.internal.scripts.JO;
+
+import javax.swing.*;
+
 public class Player extends Creature {
 
     private int Charisma;
     private int Dexterity;
     private double height;
-
+    private String name;
 
 
     public void setCharisma(int charisma) { Charisma = charisma; }
     public void setHeight(double height) { this.height = height; }
     public void setDexterity(int dexterity) { Dexterity = dexterity; }
+    public void setName(String name) { this.name = name; }
 
     public int getCharisma(){ return Charisma; }
     public int getDexterity(){return Dexterity;}
     public double getHeight(){ return height;}
-
+    public String getName() { return name; }
 //    public Player(int charisma, int dexterity, float height) {
 //        Charisma = charisma;
 //        Dexterity = dexterity;
 //        this.height = height;
 //    }
 
-    public Player(double Health, int Intelligence, double Armour, int Strength, String Vulnerability, Weapon Weapon, int charisma, int dexterity, double height) {
+    public Player(double Health, int Intelligence, double Armour, int Strength, String Vulnerability, Weapon Weapon, int charisma, int dexterity, String name,double height) {
         super(Health, Intelligence, Armour, Strength, Vulnerability, Weapon);
         Charisma = charisma;
         Dexterity = dexterity;
         this.height = height;
+        setName(name);
     }
 
     @Override
@@ -48,6 +54,26 @@ public class Player extends Creature {
 //        setHeight(height);
 //        setDexterity(Dexterity);
 //    }
+
+    public void Attack(Creature Enemey){
+        double AttackMultiplier = 0;
+        if (Player.getWeapon().getDamage_Type() == Enemey.getVulnerability()){
+            AttackMultiplier += 0.15;
+        }
+        if (Player.getIntelligence() >  Creature.getIntelligence()){
+            AttackMultiplier += 0.1;
+
+        }
+        AttackMultiplier += Player.getStrength()* 0.05;
+
+        Enemey.setHealth((Enemey.getHealth() + (Enemey.getHealth()*Enemey.getArmour())) - Player.getWeapon().getDamage()*AttackMultiplier);
+        if(Enemey.getHealth() < 0){
+            JOptionPane.showMessageDialog(null, "Foe Slain");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Your Foe has " + Enemey.getHealth() + " HP remaining.");
+
+    }
 
 
 
