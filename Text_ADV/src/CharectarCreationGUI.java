@@ -9,7 +9,7 @@ public class CharectarCreationGUI extends JFrame  {
     static double health;
     static double armour ,PlayerHeight;
     static int intelligence, charisma, Dexterity,Strength;
-    static Weapon StartingWeapon = new Weapon();
+    static Weapon StartingWeapon;
     static String Vulnerability;
     static Player user;
 
@@ -40,12 +40,12 @@ public class CharectarCreationGUI extends JFrame  {
            CharectarWindow.add(HeightInput);
 
 
-           JLabel StartWeapon = new JLabel();
-           StartWeapon.setText("Starting Weapon:");
-           StartWeapon.setForeground(Color.WHITE);
-           CharectarWindow.add(StartWeapon);
-           JTextField StartWeaponInput = new JTextField();
-           CharectarWindow.add(StartWeaponInput);
+          // JLabel StartWeapon = new JLabel();
+           //StartWeapon.setText("Starting Weapon:");
+          // StartWeapon.setForeground(Color.WHITE);
+          // CharectarWindow.add(StartWeapon);
+          // JTextField StartWeaponInput = new JTextField();
+          // CharectarWindow.add(StartWeaponInput);
 
 
 
@@ -54,24 +54,10 @@ public class CharectarCreationGUI extends JFrame  {
            Confirm.setBackground(Color.gray);
 
 
-
-
-
-
            Confirm.addActionListener(new ActionListener() {
                @Override
                public void actionPerformed(ActionEvent e) {
                    PlayerHeight = Double.parseDouble(HeightInput.getText());
-
-                   if (StartWeapon.getText() == "Spear") {
-                       StartingWeapon = new Weapon(10, "Piercing", 11.5);
-                   }
-                   if (StartWeapon.getText() == "Sword"){
-                        StartingWeapon = new Weapon(11, "Cutting", 8.5);
-                   }
-                   if (StartWeapon.getText() == "Mace"){
-                        StartingWeapon = new Weapon(13, "Bludgeon", 13.5);
-                   }
 
 
                    JFrame BackStoryWindow = new JFrame("Who are you??");
@@ -107,6 +93,7 @@ public class CharectarCreationGUI extends JFrame  {
                            Strength = 3;
                            Dexterity = 7;
                            Vulnerability = "Cutting";
+                           StartingWeapon = new Weapon(10, "Piercing", 11.5);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
                            user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
@@ -123,6 +110,7 @@ public class CharectarCreationGUI extends JFrame  {
                            Strength = 8;
                            Dexterity = 3;
                            Vulnerability = "Piercing";
+                           StartingWeapon =  new Weapon(13, "Bludgeon", 13.5);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
                            user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
@@ -139,6 +127,7 @@ public class CharectarCreationGUI extends JFrame  {
                            Strength = 8;
                            Dexterity = 7;
                            Vulnerability = "Bludgeon";
+                           StartingWeapon =  new Weapon(11, "Cutting", 8.5);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
                            user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);

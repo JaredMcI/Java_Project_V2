@@ -27,8 +27,8 @@ public class Creature {
 
     //ToString
     public String toString() {
-        return "Health: " +getHealth()+"Intelligence: "+getIntelligence()+ "Armour: "+getArmour()+ "Strength: "+
-                getStrength()+"Vulnerability: " +getVulnerability()+"Weapon: "+getWeapon();
+        return "\nHealth: " +getHealth()+"\nIntelligence: "+getIntelligence()+ "\nArmour: "+getArmour()+ "\nStrength: "+
+                getStrength()+"\nVulnerability: " +getVulnerability()+"\nWeapon: "+getWeapon();
     }
 
     public Creature(){

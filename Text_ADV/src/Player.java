@@ -36,9 +36,9 @@ public class Player extends Creature {
     @Override
     public String toString() {
         return  super.toString() +
-                "Charisma=" + Charisma +
-                ", Dexterity=" + Dexterity +
-                ", height=" + height;
+                "\nCharisma=" + Charisma +
+                ", \nDexterity=" + Dexterity +
+                ", \nheight=" + height;
     }
 
     //

@@ -15,8 +15,8 @@ public class Weapon{
 
 
     public String toString() {
-        return "Damage: " + getDamage() + "Damage Type: " +
-                getDamage_Type() + "Weight: " + getWeight();
+        return "\nDamage: " + getDamage() + "\nDamage Type: " +
+                getDamage_Type() + "\nWeight: " + getWeight();
     }
     public Weapon(){
         setDamage(0);
@@ -27,9 +27,5 @@ public class Weapon{
         setDamage(Damage);
         setDamage_Type(Damage_Type);
         setWeight(weight);
-    }
-    public static void setWeaponDamage(Double Blade_Oil) {
-        Weapon.setDamage(Blade_Oil);
-    }
-}
+    }}
 
