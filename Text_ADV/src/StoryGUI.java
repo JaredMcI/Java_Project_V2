@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class StoryGUI extends JFrame {
 
@@ -16,7 +18,7 @@ public class StoryGUI extends JFrame {
         Container Base = StoryFrame.getContentPane();
 
         JPanel StoryPanel = new JPanel();
-        StoryPanel.setBounds(100,100,600,150);
+        StoryPanel.setBounds(100,100,600,250);
         JLabel Story = new JLabel(text);
         StoryPanel.add(Story);
         StoryPanel.setBackground(Color.orange);
@@ -28,15 +30,34 @@ public class StoryGUI extends JFrame {
 
 
         JPanel OptionPanel = new JPanel();
-        OptionPanel.setBounds(100,400,200,50);
-        GridLayout Grid = new GridLayout(0,2);
+        OptionPanel.setBounds(100,400,600,50);
+        OptionPanel.setBackground(Color.blue);
+        GridLayout Grid = new GridLayout(0,3);
+        Grid.setHgap(50);
         OptionPanel.setLayout(Grid);
-        JButton AttackBTN = new JButton("Attack");
-        JButton InventoryBTN = new JButton("Inventory");
+        ImageIcon Attack = new ImageIcon("../../Images/AttackButton.png");
+        JButton AttackBTN = new JButton(Attack);
+        AttackBTN.setBackground(Color.BLACK);
+        AttackBTN.setForeground(Color.white);
+        AttackBTN.setBorderPainted(true);
+
+        JButton LeftBTN = new JButton("Left");
+        JButton RightBTN = new JButton("Right");
         OptionPanel.add(AttackBTN);
-        OptionPanel.add(InventoryBTN);
+        OptionPanel.add(LeftBTN);
+        OptionPanel.add(RightBTN);
 
         Base.add(StoryPanel);
         Base.add(OptionPanel);
+
+        AttackBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AttackGUI.start();
+
+
+            }
+        });
+
     }
 }

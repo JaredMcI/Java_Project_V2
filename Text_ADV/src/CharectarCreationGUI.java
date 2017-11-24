@@ -94,9 +94,9 @@ public class CharectarCreationGUI extends JFrame  {
                            Dexterity = 7;
                            Vulnerability = "Cutting";
                            StartingWeapon = new Weapon(10, "Piercing", 11.5);
+                           user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
-                           user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
                            GameGUI.start(user);
                        }
                    });
