@@ -86,18 +86,15 @@ public class CharectarCreationGUI extends JFrame  {
                    Thief.addActionListener(new ActionListener() {
                        @Override
                        public void actionPerformed(ActionEvent e) {
-                           health = 90;
-                           armour = 0.1;
-                           intelligence = 8;
                            charisma = 4;
                            Strength = 3;
                            Dexterity = 7;
                            Vulnerability = "Cutting";
                            StartingWeapon = new Weapon(10, "Piercing", 11.5);
-                           user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
+                           user = new Player(90, 8, 0.1, 3,"Cutting", StartingWeapon, 4, 7, NameInput.getText(), PlayerHeight);
+                           GameGUI.start(user);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
-                           GameGUI.start(user);
                        }
                    });
                    Farmer.addActionListener(new ActionListener() {
