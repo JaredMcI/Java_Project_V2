@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class StoryGUI extends JFrame {
 
-    public static void start(String text, Creature Enemey,Player User)
+    public static void start(Player User, String text, Creature Enemey)
     {
 
 
@@ -53,7 +53,7 @@ public class StoryGUI extends JFrame {
         AttackBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AttackGUI.start(Enemey, User);
+                AttackGUI.start(User, Enemey);
 
 
             }

@@ -1,9 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AttackGUI extends JFrame {
 
-    public static void start(Creature Enemey, Player User){
+    public static void start(Player User,Creature Enemey){
 
     JFrame AttackFrame = new JFrame("Battle!!");
     GridLayout grid = new GridLayout(3,0);
@@ -12,7 +14,6 @@ public class AttackGUI extends JFrame {
         AttackFrame.setVisible(true);
         AttackFrame.getContentPane().setBackground(Color.BLACK);
 
-        ;
 
         JPanel EnemeyPanel = new JPanel();
         EnemeyPanel.setBackground(Color.BLUE);
@@ -28,6 +29,7 @@ public class AttackGUI extends JFrame {
         EnemyStat.setForeground(Color.white);
         EnemeyPanel.setBackground(Color.black);
         EnemeyPanel.add(EnemyStat);
+
         JTextArea UserStat = new JTextArea(User.toString());
         UserStat.setLineWrap(true);
         UserStat.setBounds(50,50,600,180);
@@ -52,4 +54,17 @@ public class AttackGUI extends JFrame {
         AttackFrame .add(UserPanel);
         AttackFrame.add(ButtonsPanel);
 
+        Strike.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User.Attack(Enemey);
+                Enemey.Attack(User);
+            }
+        });
+        Retreat.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User.setHealth(User.getHealth()*0.9);
+            }
+        });
     }}

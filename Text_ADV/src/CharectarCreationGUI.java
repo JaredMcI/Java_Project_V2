@@ -86,10 +86,6 @@ public class CharectarCreationGUI extends JFrame  {
                    Thief.addActionListener(new ActionListener() {
                        @Override
                        public void actionPerformed(ActionEvent e) {
-                           charisma = 4;
-                           Strength = 3;
-                           Dexterity = 7;
-                           Vulnerability = "Cutting";
                            StartingWeapon = new Weapon(10, "Piercing", 11.5);
                            user = new Player(90, 8, 0.1, 3,"Cutting", StartingWeapon, 4, 7, NameInput.getText(), PlayerHeight);
                            GameGUI.start(user);
@@ -100,35 +96,20 @@ public class CharectarCreationGUI extends JFrame  {
                    Farmer.addActionListener(new ActionListener() {
                        @Override
                        public void actionPerformed(ActionEvent e) {
-                           health = 100;
-                           armour = 0.15;
-                           intelligence = 3;
-                           charisma = 7;
-                           Strength = 8;
-                           Dexterity = 3;
-                           Vulnerability = "Piercing";
                            StartingWeapon =  new Weapon(13, "Bludgeon", 13.5);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
-                           user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
+                           user = new Player(100, 3, 0.15, 8, "Piercing", StartingWeapon, 7, 3, NameInput.getText(), PlayerHeight);
                            GameGUI.start(user);
                        }
                    });
                    Soldier.addActionListener(new ActionListener() {
                        @Override
                        public void actionPerformed(ActionEvent e) {
-                           health = 100;
-                           armour = 0.25;
-                           intelligence = 2;
-                           charisma = 2;
-                           Strength = 8;
-                           Dexterity = 7;
-                           Vulnerability = "Bludgeon";
                            StartingWeapon =  new Weapon(11, "Cutting", 8.5);
                            BackStoryWindow.dispose();
                            CharectarWindow.dispose();
-                           user = new Player(health, intelligence, armour, Strength, Vulnerability, StartingWeapon, charisma, Dexterity, NameInput.getText(), PlayerHeight);
-
+                           user = new Player(100, 2, 0.25, 8, "Bludgeon", StartingWeapon, 2, 7, NameInput.getText(), PlayerHeight);
                            GameGUI.start(user);
                        }
                    });

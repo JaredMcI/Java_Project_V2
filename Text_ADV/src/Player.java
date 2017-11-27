@@ -64,9 +64,10 @@ public class Player extends Creature {
             AttackMultiplier += 0.1;
 
         }
-        AttackMultiplier += Player.getStrength()* 0.05;
+        AttackMultiplier += (Player.getStrength()* 0.05);
 
-        Enemey.setHealth((Enemey.getHealth() + (Enemey.getHealth()*Enemey.getArmour())) - Player.getWeapon().getDamage()*AttackMultiplier);
+
+        Enemey.setHealth(Enemey.getHealth() - (Player.getWeapon().getDamage()*AttackMultiplier));
         if(Enemey.getHealth() < 0){
             JOptionPane.showMessageDialog(null, "Foe Slain");
         }
